@@ -13,11 +13,15 @@ class MyStack
   end
 
   def pop
-    val = @linked_list.get(0)
+    popped_node = @linked_list.first_node if @linked_list.first_node
     @linked_list.head = @linked_list.head.next_node if !@linked_list.head.nil?
-    val
+    popped_node
   end
 
   private
   attr_accessor :linked_list
+
+  def reset_head
+    @linked_list.head = @linked_list.head.next_node if !@linked_list.head.nil?
+  end
 end

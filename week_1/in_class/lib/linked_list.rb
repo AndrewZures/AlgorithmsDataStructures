@@ -19,8 +19,18 @@ class LinkedList
       while !node.next_node.nil? do
         node = node.next_node
       end
-    node.next_node = Node.new(value)
+      new_node = Node.new(value)
+      node.next_node = new_node
+      @last_node = new_node
     end
+  end
+
+  def first_node
+    get(0)
+  end
+
+  def last_node
+    @last_node ? @last_node : nil
   end
 
   def get(index)

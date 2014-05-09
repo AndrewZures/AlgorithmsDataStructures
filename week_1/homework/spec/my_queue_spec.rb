@@ -2,6 +2,12 @@ require 'rspec'
 require 'my_queue'
 
 describe MyQueue do
+
+  it "return nil if can't pop" do
+    queue = MyQueue.new
+    expect(queue.pop).to eq nil
+  end
+
   it "push-pops" do
     queue = MyQueue.new
     queue.push(1)
